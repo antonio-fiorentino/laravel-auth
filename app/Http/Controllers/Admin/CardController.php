@@ -15,7 +15,7 @@ class CardController extends Controller
      */
     public function index()
     {
-        //
+        return redirect()->route('public-index');
     }
 
     /**
@@ -25,7 +25,7 @@ class CardController extends Controller
      */
     public function create()
     {
-        //
+        return view('cards.private.create');
     }
 
     /**
@@ -42,12 +42,12 @@ class CardController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  Card  $card
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Card $card)
     {
-        //
+        return redirect()->route('public-show', compact('card'));
     }
 
     /**
